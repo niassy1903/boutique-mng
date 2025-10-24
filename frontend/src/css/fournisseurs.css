@@ -1,0 +1,224 @@
+/* --- Conteneur principal --- */
+.fournisseurs-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background: #f5f7fa;
+  overflow-x: hidden; /* ✅ empêche tout scroll horizontal */
+}
+
+/* --- Contenu principal --- */
+.fournisseurs-content {
+  min-height: 100vh;
+  padding: 25px 35px;
+  margin-left: 240px; /* largeur de la sidebar */
+  margin-top: 90px; /* hauteur de la navbar */
+  overflow-x: hidden;
+}
+
+/* --- Carte d’en-tête --- */
+.fournisseurs-header {
+  background: linear-gradient(90deg, #007bff, #00b4d8);
+  color: white;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+}
+
+.fournisseurs-header .header-icon {
+  font-size: 2.3rem;
+}
+
+/* --- Liste des fournisseurs --- */
+.fournisseurs-list-card {
+  border-radius: 20px;
+  background-color: #fff;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  overflow-x: auto; /* ✅ permet le scroll horizontal sans déborder */
+  overflow-y: hidden;
+  white-space: nowrap;
+}
+
+.fournisseurs-list-card:hover {
+  transform: translateY(-4px);
+}
+
+/* --- Carte de recherche --- */
+.search-card {
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.search-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.search-card .input-group {
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #f8f9fa;
+}
+
+.search-card .input-group-text {
+  border-radius: 0;
+  background-color: transparent;
+}
+
+.search-card .search-input:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.search-card .form-control {
+  background-color: #fff;
+  border-radius: 0;
+}
+
+/* --- Table principale --- */
+.table {
+  border-collapse: separate;
+  border-spacing: 0 0.6rem;
+  table-layout: fixed; /* ✅ fixe la largeur des colonnes */
+  width: 100%;
+}
+
+.table thead th {
+  background-color: #eaf3ff;
+  color: #007bff;
+  font-weight: 600;
+  text-transform: uppercase;
+  border: none;
+  padding: 12px 8px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  text-align: center;
+}
+
+.table tbody tr {
+  background: #fff;
+  border-radius: 12px;
+  transition: all 0.25s ease;
+}
+
+.table tbody tr:hover {
+  background: #f0f7ff;
+}
+
+.table td {
+  vertical-align: middle;
+  border-top: none;
+  padding: 10px 8px;
+  font-size: 0.9rem;
+  text-align: center;
+  word-break: break-word; /* ✅ évite le débordement du texte */
+  white-space: normal;
+  max-width: 200px; /* ✅ limite la largeur d’une cellule */
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* --- Actions --- */
+.table .actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+/* --- Boutons d’action --- */
+.btn-action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  border: none;
+  transition: all 0.25s ease;
+  font-size: 1rem;
+}
+
+.btn-action.edit {
+  background-color: #e9f2ff;
+  color: #007bff;
+}
+
+.btn-action.edit:hover {
+  background-color: #007bff;
+  color: white;
+  transform: translateY(-2px);
+}
+
+.btn-action.delete {
+  background-color: #ffe9e9;
+  color: #dc3545;
+}
+
+.btn-action.delete:hover {
+  background-color: #dc3545;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* --- Pagination --- */
+.page-link {
+  border-radius: 10px !important;
+  margin: 0 4px;
+  color: #007bff;
+  border: none;
+}
+
+.page-link:hover {
+  background-color: #007bff;
+  color: white;
+}
+
+.pagination-container {
+  margin-top: 15px;
+}
+
+/* --- Responsive mobile --- */
+@media (max-width: 992px) {
+  .fournisseurs-content {
+    margin-left: 0;
+    padding: 20px;
+    margin-top: 80px;
+  }
+
+  .table {
+    display: block;
+    overflow-x: auto; /* ✅ permet le scroll horizontal mobile */
+    white-space: nowrap;
+  }
+
+  .table thead {
+    display: none;
+  }
+
+  .table tbody tr {
+    display: block;
+    margin-bottom: 1rem;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+  }
+
+  .table tbody td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    padding: 4px 0;
+  }
+
+  .table tbody td::before {
+    content: attr(data-label);
+    font-weight: 600;
+    color: #007bff;
+    margin-right: 8px;
+  }
+
+  .actions {
+    justify-content: flex-end;
+  }
+}

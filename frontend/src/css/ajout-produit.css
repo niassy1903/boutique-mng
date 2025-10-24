@@ -1,0 +1,122 @@
+/* Container principal */
+.produits-content {
+  background-color: #f5f7fa;
+  min-height: 100vh;
+  padding: 20px 30px;
+  margin-left: 250px; /* pour le Sidebar */
+  margin-top: 70px; /* pour Navbar */
+  transition: all 0.3s ease;
+}
+
+/* Cartes de formulaire */
+.card {
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  background-color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Titres de cartes */
+.card h5 {
+  font-weight: 600;
+  color: #007bff;
+}
+
+/* Inputs */
+.form-control {
+  border-radius: 12px;
+  border: 1px solid #ced4da;
+  padding: 10px 12px;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+  outline: none;
+}
+
+/* Labels */
+label {
+  font-weight: 500;
+  color: #495057;
+}
+
+/* Info textes */
+.text-muted {
+  font-size: 0.85rem;
+}
+
+/* Boutons */
+.btn {
+  border-radius: 12px;
+  padding: 8px 16px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-success {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-success:hover {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  border-color: #6c757d;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+  border-color: #545b62;
+}
+
+/* Flex containers */
+.d-flex {
+  display: flex;
+}
+
+.gap-2 {
+  gap: 8px;
+}
+
+.gap-3 {
+  gap: 12px;
+}
+
+.flex-grow-1 {
+  flex: 1;
+}
+
+/* Statut stock */
+input[readonly] {
+  background-color: #f0f8ff;
+  color: #007bff;
+  font-weight: 500;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+  .produits-content {
+    margin-left: 0;
+    margin-top: 0;
+    padding: 15px;
+  }
+  
+  .d-flex {
+    flex-direction: column;
+  }
+  
+  .flex-grow-1 {
+    width: 100%;
+  }
+}

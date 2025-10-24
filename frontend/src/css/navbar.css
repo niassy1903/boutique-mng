@@ -1,0 +1,96 @@
+.navbar {
+  height: 65px;
+  width: calc(100% - 240px); /* Réduit la largeur pour laisser la place au sidebar */
+  margin-left: 250px; /* Décalage à droite du sidebar */
+  background-color: #ffffff;
+  border-bottom: 2px solid #e0e0e0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 25px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-radius: 10px;
+}
+
+.navbar-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbar-logo {
+  width: 40px;
+  height: 40px;
+}
+
+.app-title {
+  color: #0d6efd;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.user-icon {
+  font-size: 1.6em;
+  color: #0d6efd;
+}
+
+.username {
+  font-weight: bold;
+  color: #333;
+}
+
+.role-badge {
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-size: 12px;
+  color: white;
+  background-color: #0d6efd;
+}
+
+.role-badge.superadmin {
+  background-color: #28a745;
+}
+
+.logout-btn {
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.logout-btn:hover {
+  background: #b02a37;
+}
+
+@media (max-width: 768px) {
+  .app-title {
+    display: none;
+  }
+  .username {
+    display: none;
+  }
+  .logout-btn {
+    padding: 6px;
+  }
+}
